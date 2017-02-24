@@ -15,7 +15,6 @@ require('./router.js');
 //     document.getElementById('app'));
 // };
 
-// Confused why start is not rendering blue as a func name?
 $(function(){
   Backbone.history.start();
 });
