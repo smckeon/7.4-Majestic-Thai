@@ -15,3 +15,24 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+body {
+  background-color: tan;
+  color: #456766;
+}
+
+.menu-window {
+  border: 1px solid #456766;
+}
+
+.item-price {
+  float: right;
+  list-style-type: none;
+}
+
+.order-window {
+  border: 1px solid #456766;
+  .order-item-price{
+    float: right;
+  }
+}
