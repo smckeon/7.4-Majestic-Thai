@@ -17,12 +17,21 @@ img {
 }
 
 body {
-  background-color: tan;
+  background-image: url('../images/bodybg.jpg');
   color: #456766;
+  font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+  border: 1px solid #24705e;
+}
+
+#add-to-order-btn {
+  background-color: #91b3ab;
 }
 
 .menu-window {
-  border: 1px solid #456766;
+  // border: 1px solid #456766;
 }
 
 .item-price {
@@ -30,9 +39,20 @@ body {
   list-style-type: none;
 }
 
-.order-window {
-  border: 1px solid #456766;
-  .order-item-price{
+  .order-item-price {
     float: right;
-  }
+}
+
+.food-item-price {
+  list-style-type: none;
+}
+
+#subtotal {
+  position: relative;
+    left: 15em;
+}
+
+#place-order-btn {
+  position: relative;
+  left: 19em;
 }

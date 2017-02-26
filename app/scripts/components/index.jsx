@@ -24,6 +24,7 @@ var MenuContainer = React.createClass({
     this.setState({foodCollection: newFoodCollection});
   },
   addOrderItem: function(foodProps){
+    {/*this is adding to the cloud but not tiny lasgna*/}
     this.state.orderCollection.add(foodProps.toJSON());
     this.forceUpdate();
   },
@@ -54,15 +55,17 @@ var FoodForm = React.createClass({
     var foodListings = this.props.foodCollection.map(function(foodProps){
       return (
         <div key={foodProps.cid}>
-          <span className="item-listing"> {foodProps.get('food_item')} </span>
-            <ul className="item-price">
-              <li> Price </li>
-              <li>{foodProps.get('price')}</li>
-            </ul>
-            <button type="button" className="btn btn-default btn-xs" onClick={() => {self.props.addOrderItem(foodProps)}}>Add To Order</button>
+          <div className="well">
+            <span className="item-listing"> {foodProps.get('food_item')} </span>
+              <ul className="item-price">
+                <li> Price </li>
+                <li>{foodProps.get('price')}</li>
+                <li><button type="button" id="add-to-order-btn" className="btn btn-default btn-xs" onClick={() => {self.props.addOrderItem(foodProps)}}>Add To Order</button></li>
+              </ul>
+
           <p className="item-description"> {foodProps.get('description')}</p>
-          <br></br>
         </div>
+      </div>
       );
     });
 
@@ -113,18 +116,19 @@ var OrderForm = React.createClass({
       return (
         <li key={orderItem.cid}>
           <span>{orderItem.get('food_item')}</span>
-          <span className="order-item-price"> {orderItem.get('price')} </span>
+          <span className="order-item-price">${orderItem.get('price')} </span>
         </li>
       )
     });
 
     return(
-      <div>
+      <div className="well">
         <span> Your Order </span>
-          <ul>
+          <ul className="food-item-price">
             {orderItems}
           </ul>
-          <p> Subtotal: ${subTotal} </p>
+          <hr />
+          <p id="subtotal"> Subtotal: ${subTotal} </p>
         <button onClick={this.placeOrder} type="submit" id="place-order-btn" className="btn btn-secondary btn-sm">Place Order</button>
       </div>
     );
